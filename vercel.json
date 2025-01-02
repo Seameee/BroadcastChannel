@@ -1,5 +1,8 @@
 {
   "functions": {
+    "api/static/index.js": {
+      "runtime": "edge"
+    },
     "api/**/*.js": {
       "runtime": "nodejs18.x"
     },
@@ -7,7 +10,14 @@
       "runtime": "nodejs18.x"
     }
   },
-  "rewrites": [
-    { "source": "/static/:path*", "destination": "/api/static" }
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/**/*.ts",
+      "use": "@vercel/node"
+    }
   ]
 }
