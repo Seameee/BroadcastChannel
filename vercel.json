@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/static/index.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "rewrites": [
     { "source": "/static/:path*", "destination": "/api/static" }
   ]
